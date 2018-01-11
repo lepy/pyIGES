@@ -283,6 +283,5 @@ class IGESStatusNumber:
         self.Hierachy = IGESHierachy()
 
     def __str__(self):
-        print(self.Visablilty, self.Subordinate, self.EntityUseFlag, self.Hierachy)
-        return "{0}{1}{2}{3}".format(self.Visablilty, self.Subordinate, self.EntityUseFlag, self.Hierachy)
-        # return "{:0>2}{:0>2}{:0>2}{:0>2}".format(self.Visablilty, self.Subordinate, self.EntityUseFlag, self.Hierachy)
+        return "{:0>2}{:0>2}{:0>2}{:0>2}".format(self.Visablilty.getValue(), self.Subordinate.getValue(),
+                                                 self.EntityUseFlag.getValue(), self.Hierachy.getValue())

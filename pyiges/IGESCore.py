@@ -13,7 +13,7 @@
 
 """
 
-
+import pyiges.IGESCompile as IGESCompile
 from pyiges.IGESOptions import (IGESModelUnits,
                                 IGESEntityTypeNumber,
                                 IGESStatusNumber,
@@ -21,8 +21,6 @@ from pyiges.IGESOptions import (IGESModelUnits,
                                 IGESLineFontPattern,
                                 IGESPointer,
                                 IGESDateTime)
-
-import pyiges.IGESCompile as IGESCompile
 
 
 class IGESectionFunctions:
@@ -93,21 +91,21 @@ class IGESItemData:
             raise TypeError(inst)
 
     def CompileDirectory(self):
-        items = [self.EntityType.getValue(),             # Item 1
-                 self.ParameterDataPointer.data,         # Item 2
-                 self.Structure,                         # Item 3
-                 self.LineFontPattern.getValue(),        # Item 4
-                 self.Level,                             # Item 5
-                 self.View,                              # Item 6
-                 self.TransfrmMat,                       # Item 7
-                 self.LabelDispAssoc,                    # Item 8
-                 str(self.StatusNumber),                 # Item 9
-                 self.LineWeightNum,                     # Item 12
-                 self.Color.getValue(),                  # Item 13
-                 self.ParameterLineCount,                # Item 14
-                 self.FormNumber,                        # Item 15
-                 "", "",                                 # Item 16, 17 Reserved
-                 self.EntityLabel[:8],                   # Item 18
+        items = [self.EntityType.getValue(),  # Item 1
+                 self.ParameterDataPointer.data,  # Item 2
+                 self.Structure,  # Item 3
+                 self.LineFontPattern.getValue(),  # Item 4
+                 self.Level,  # Item 5
+                 self.View,  # Item 6
+                 self.TransfrmMat,  # Item 7
+                 self.LabelDispAssoc,  # Item 8
+                 str(self.StatusNumber),  # Item 9
+                 self.LineWeightNum,  # Item 12
+                 self.Color.getValue(),  # Item 13
+                 self.ParameterLineCount,  # Item 14
+                 self.FormNumber,  # Item 15
+                 "", "",  # Item 16, 17 Reserved
+                 self.EntityLabel[:8],  # Item 18
                  self.EntitySubScript]                   # Item 19
 
         Line1Template = "{p[0]:>8}{p[1]:>8}{p[2]:>8}{p[3]:>8}{p[4]:>8}{p[5]:>8}{p[6]:>8}{p[7]:>8}{p[8]:>8}"

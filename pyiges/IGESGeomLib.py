@@ -194,7 +194,7 @@ class IGESGeomPolyline(IGESItemData):
     def AddPoint(self, Point):
         self.AddParameters(list(Point))
 
-        self.pointcount = self.pointcount + 1
+        self.pointcount += 1
         self.ParameterData[1] = self.pointcount
 
 
