@@ -113,6 +113,7 @@ class IGESItemData:
         Line1Template = "{p[0]:>8}{p[1]:>8}{p[2]:>8}{p[3]:>8}{p[4]:>8}{p[5]:>8}{p[6]:>8}{p[7]:>8}{p[8]:>8}"
         Line2Template = "{p[0]:>8}{p[9]:>8}{p[10]:>8}{p[11]:>8}{p[12]:>8}{p[13]:>8}{p[14]:>8}{p[15]:>8}{p[16]:>8}"
 
+        print(items)
         self.CompiledDirectory = [Line1Template.format(p = items)]
         self.CompiledDirectory.append(Line2Template.format(p = items))
 
